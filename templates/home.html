@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block extra_head %}<script src="{% static "js/stars.js" %}" defer></script>{% endblock %}
+{% block body_class %}{{ block.super }} home{% endblock %}
+{% block content %}
+<div class="stars">
+  <div class="stars1"></div>
+  <div class="stars2"></div>
+  <div class="hero">
+    <h1>Hi, I'm Laurence, <br>a Python and Django developer based in London, UK</h1>
+    <a class="button" href="/about">Find out more</a>
+  </div>
+</div>
+{% endblock %}

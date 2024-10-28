@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Portfolio{% endblock %}
+{% block description %}Clients include The American Federation of Teachers, Sony Music, and The British Library.{% endblock %}
+{% block body_class %}{{ block.super }} portfolio{% endblock %}
+{% block content %}
+<h1 class="page-title">Portfolio</h1>
+<h2>Recent projects</h2>
+<div class="project">
+  <img src="{% static 'img/ludoly.png' %}" alt="A screenshot of the Ludoly website home page.">
+  <div>
+    <h3>Ludoly</h3>
+    <p><a href="https://ludoly.co">ludoly.co</a></p>
+    <p class="role">Role: Full-stack development</p>
+    <p class="stack">Stack: Python, Django, PostgreSQL, NGINX, Django REST Framework (DRF), Django Template Language (DTL), htmx, Alpine, JavaScript, CSS</p>
+    <p class="description">Ludoly offers a free, daily collection of puzzles inspired by classic games such as sudoku and minesweeper. Features include: a custom user model, user accounts and profiles, a DRF-based API, puzzle generation, subscription-based access to an archive of past puzzles, and subscription management, billing, and payment integration via Stripe.</p>
+  </div>
+</div>
+<div class="project">
+  <img src="{% static 'img/django-95.png' %}" alt="A screenshot of the Django admin using the Django 95 theme.">
+  <div>
+    <h3>Django 95</h3>
+    <p class="role">Role: Frontend development</p>
+    <p class="stack">Stack: Python, Django, Django Template Language (DTL), JavaScript, CSS</p>
+    <p class="description">Django 95 is a Django admin theme inspired by Windows 95.</p>
+  </div>
+</div>
+<h2>Past projects</h2>
+<div class="project">
+  <img src="{% static 'img/share-my-lesson.png' %}" alt="A promotional image for the Share My Lesson website.">
+  <div>
+  <h3>Share My Lesson · The American Federation of Teachers</h3>
+  <p><a href="https://sharemylesson.com">sharemylesson.com</a></p>
+  <p class="role">Role: Full-stack development</p>
+  <p class="stack">Stack: PHP, Drupal, MySQL, Apache, JavaScript, CSS</p>
+  <p class="description">Share My Lesson is an education-focused site run by the American Federation of Teachers (AFT), offering free lesson plans, teacher resources, and classroom activities. I worked for the developers, Tag1, as a full-stack specialist.</p>
+  </div>
+</div>
+<div class="project">
+  <img src="{% static 'img/jimi-hendrix.png' %}" alt="A promotional image for the Jimi Hendrix website.">
+  <div>
+  <h3>Jimi Hendrix · Sony Music</h3>
+  <p><a href="https://www.jimihendrix.com">jimihendrix.com</a></p>
+  <p class="role">Role: Full-stack development</p>
+  <p class="stack">Stack: PHP, Drupal, MySQL, Apache, JavaScript, CSS</p>
+  <p class="description">The most complex Drupal project I developed, Jimi Hendrix's website features many custom content types and roles, multilingual content, and extensive JavaScript and views implementations.</p>
+  </div>
+</div>
+<div class="project">
+  <img src="{% static 'img/british-library.png' %}" alt="A promotional image for the Data Is The New website.">
+  <div>
+  <h3>Data Is The New · The British Library</h3>
+  <p><a href="https://labs.biblios.tech/">labs.biblios.tech</a></p>
+  <p class="role">Role: Full-stack development</p>
+  <p class="stack">Stack: PHP, Drupal, MySQL, Apache, RDF, SPARQL, Linked Open Data, JavaScript, CSS</p>
+  <p class="description">A microsite created for the British Library Labs, Data Is The New comprises works exploring and experimenting with the British Library's digital collections.</p>
+  </div>
+</div>
+<h2>Other projects</h2>
+<p>The following projects are all Drupal websites. If you'd like further details about any project please let me know.</p>
+<ul class="other-projects">
+  <li><span class="site">Archetypes · Archetypes, Inc.</li>
+  <li><span class="site">Michael Jackson</span> · Sony Music</li>
+  <li><span class="site">Incubus</span> · Sony Music</li>
+  <li><span class="site">American Idol Music</span> · Sony Music</li>
+  <li><span class="site">Passion Pit</span> · Sony Music</li>
+  <li><span class="site">The Fray</span> · Sony Music</li>
+  <li><span class="site">Ciara</span> · Sony Music</li>
+  <li><span class="site">Daughtry</span> · Sony Music</li>
+  <li><span class="site">Manchester Orchestra</span> · Sony Music</li>
+  <li><span class="site">Britney Spears</span> · Sony Music</li>
+  <li><span class="site">Gogol Bordello</span> · Sony Music</li>
+  <li><span class="site">Rod Stewart</span> · Sony Music</li>
+  <li><span class="site">Derek Trucks</span> · Sony Music</li>
+  <li><span class="site">David Cook</span> · Sony Music</li>
+  <li><span class="site">John Legend</span> · Sony Music</li>
+  <li><span class="site">Jordin Sparks</span> · Sony Music</li>
+  <li><span class="site">Miranda Cosgrove</span> · Sony Music</li>
+  <li><span class="site">Backstreet Boys</span> · Sony Music</li>
+  <li><span class="site">Verity Records</span> · Sony Music</li>
+  <li><span class="site">Wise Vacation</span> · Bluetent</li>
+</ul>
+{% endblock %}

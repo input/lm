@@ -1,0 +1,14 @@
+{% extends base_template %}
+
+{% block title %}{{ year }} | Blog{% endblock %}
+{% block body_class %}{{ block.super }} blog-year{% endblock %}
+{% block content %}
+<div class="blog-wrap">
+  <h1><a href="{% url 'django_plugin_blog_index' %}" title="My blog">Blog</a> / {{ year }}</h1>
+  <div class="entries">
+    {% for entry in entries %}
+    <p><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.title }}</a> - {{ entry.created|date:"d F Y" }}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

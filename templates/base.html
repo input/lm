@@ -1,0 +1,58 @@
+{% load compress i18n static %}<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | Laurence Mercer - Python and Django developer</title>
+    <meta name="description" content="{% block description %}Laurence Mercer - Python and Django developer - London, UK{% endblock %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stars.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/links.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile-menu.css' %}">
+    {% endcompress %}
+    {% compress js %}
+    <script src="{% static 'js/menu.js' %}" defer></script>
+    {% endcompress %}
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
+    <a href="#content-start" class="skip-link">{% translate 'Skip to main content' %}</a>
+    <header role="banner">
+      <a href="{% url 'home' %}" rel="home" class="site-name">Laurence Mercer</a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="mm menu-open" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ffffff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      <nav role="navigation">
+        <div class="mm mm-header">
+          <a href="{% url 'home' %}" rel="home" class="site-name">Laurence Mercer</a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="menu-close" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ffffff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </div>
+        <ul class="menu">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}" title="Information about me">About</a></li>
+          <li><a href="{% url 'portfolio' %}" title="My portfolio">Portfolio</a></li>
+          <li><a href="{% url 'django_plugin_blog_index' %}" title="My blog">Blog</a></li>
+          <li><a href="{% url 'contact' %}" title="Contact me" class="button">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="content-start">
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>Website source code released (via <a href="https://github.com/input/lm">GitHub</a>) under the 3-Clause BSD License.</p>
+      <p>All else copyright © {% now 'Y' %} Laurence Mercer. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

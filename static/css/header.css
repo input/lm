@@ -1,0 +1,46 @@
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.site-name {
+  background: url(/static/img/logo.png) no-repeat center;
+  display: block;
+  height: 56px;
+  width: 56px;
+  text-indent: -1000rem;
+}
+
+.site-name:active {
+  position: relative;
+  top: 2px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .site-name a {
+    background-image: url(logo-2x.png);
+    background-size: contain;
+  }
+}
+
+nav ul {
+  align-items: center;
+  display: flex;
+  gap: 1.75rem;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  font-family: var(--font-family-medium);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
+}

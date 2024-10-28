@@ -1,0 +1,28 @@
+#picture {
+  background: url(/static/img/me.png) no-repeat center top;
+  background-size: 305px;
+  border: var(--border);
+  border-radius: 250px;
+  height: 250px;
+  margin: 0 auto 3rem;
+  width: 250px;
+}
+
+@media all and (min-width: 1000px) {
+  #about {
+    display: flex;
+  }
+
+  .about-section {
+    flex: 1 1 0;
+  }
+
+  .about-section:first-child {
+    border-right: var(--border);
+    padding: 0 3rem 0 .5rem;
+  }
+
+  .about-section:last-child {
+    padding: 0 .5rem 0 3rem;
+  }
+}

@@ -1,0 +1,41 @@
+{% extends base_template %}
+{% load static %}
+
+{% block title %}{% if entry.is_draft and not user.is_authenticated %}Unpublished{% else %}{{ entry.title }} | Blog{% endif %}{% endblock %}
+{% block description %}{% if entry.is_draft and not user.is_authenticated %}Unpublished{% else %}{{ entry.summary_text }}{% endif %}{% endblock %}
+{% block extra_head %}
+  {% if entry.is_draft and not user.is_authenticated %}
+    <meta name="robots" content="noindex">
+  {% else %}
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:title" content="{{ entry.title }}">
+    {% if entry.card_image %}<meta property="og:image" content="{{ entry.card_image }}">{% endif %}
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="{{ entry.summary_text }}">
+    <link rel="stylesheet" href="{% static 'css/a11y-dark.min.css' %}">
+    <script src="{% static 'js/highlight.min.js' %}" defer></script>
+    <script src="{% static 'js/code.js' %}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+  {% endif %}
+{% endblock %}
+{% block content %}
+<div class="blog-wrap">
+  {% if entry.is_draft and not user.is_authenticated %}
+  <h1>Unpublished</h1>
+  <p>This post is unpublished.</p>
+  {% else %}
+  <article>
+    <h1>{{ entry.title }}{% if entry.is_draft %} (draft){% endif %}</h1>
+    <p class="dateline">{{ entry.created|date:"d F Y" }}</p>
+    <ul class="tags">
+      {% for tag in entry.tags.all %}<li><a href="/blog/tag/{{ tag.slug }}" class="tag" title="All posts tagged {{ tag.name }}">{{ tag.name }}</a></li>{% endfor %}
+    </ul>
+    <div>
+      {{ entry.body_rendered }}
+    </div>
+  </article>
+  {% endif %}
+</dev>
+{% endblock %}

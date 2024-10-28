@@ -1,0 +1,20 @@
+{% extends base_template %}
+
+{% block title %}{{ tag }} | Blog{% endblock %}
+{% block body_class %}{{ block.super }} blog-tag{% endblock %}
+{% block content %}
+<div class="blog-wrap">
+  <h1><a href="{% url 'django_plugin_blog_index' %}" title="My blog">Blog</a> / tag / {{ tag }}</h1>
+
+  {% regroup entries by created.year as entries_by_year %}
+
+  {% for year, entries in entries_by_year %}
+  <h2>{{ year }}</h2>
+  <div class="entries">
+    {% for entry in entries %}
+    <p><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.title }}</a> - {{ entry.created|date:"d F Y" }}</p>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+{% block description %}I provide development services for clients across the world. Skills include: Python, Django (models, views, ORM, etc.), Django REST Framework (DRF), Django Template Language (DTL), NGINX, Apache, PostgreSQL, and Docker.{% endblock %}
+{% block body_class %}{{ block.super }} about{% endblock %}
+{% block content %}
+<h1 class="page-title visually-hidden">About</h1>
+<div>
+  <div id="picture"></div>
+  <div id="about">
+    <div class="about-section" id="about-overview">
+      <h2>Overview</h2>
+      <p>Hi, I'm Laurence Mercer, a full-stack Python and Django developer with eighteen years' site building, module development, and theming experience.</p>
+      <h3>Timeline</h3>
+      <p>Broadly, my professional career comprises three periods:</p>
+      <ul>
+        <li>Drupal developer (2006–20), initially frontend then full-stack</li>
+        <li>Academic study, part-time (2016–22), including two master's degrees:</li>
+        <ul>
+          <li>MA in Music (Musicology), Open University, 2016–18</li>
+          <li>MSt in Literature and Arts, University of Oxford, 2020–22</li>
+        </ul>
+        <li>Python and Django developer (2023–present), full-stack</li>
+      </ul>
+      <h3>Skills</h3>
+      <p>Python, Django (models, views, ORM, etc.), Django REST Framework (DRF), Django Template Language (DTL), NGINX, Apache, PostgreSQL, <abbr title="My Structured Query Language">MySQL</abbr>, Docker, DDEV, virtual machines, Git, Git repository platforms (GitHub, GitLab, etc.), <abbr title="Command-line interface">CLIs</abbr>, C#, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, Drupal, Hugo, <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, <abbr title="Syntactically Awesome Style Sheets">Sass</abbr>, <abbr title="Leaner Style Sheets">LESS</abbr>, PostCSS, responsive design, htmx, JavaScript, JavaScript libraries (jQuery, React, etc.), JavaScript frameworks (primarily Next.js), TypeScript, Node.js, package managers (pip, npm, Yarn, etc.), bundlers (esbuild, webpack, Laravel Mix, etc.), Symfony, Twig, <abbr title="Resource Description Framework">RDF</abbr>, <abbr title="SPARQL Protocol and RDF Query Language">SPARQL</abbr>, Linked Data, <abbr title="Application Programming Interface">API</abbr>s (primarily <abbr title="Representational State Transfer">REST</abbr>/<abbr title="JavaScript Object Notation">JSON</abbr>, JSON:API, and GraphQL), mapping solutions (primarily Google Maps, OpenLayers, Mapbox, and Leaflet), and graphics/UI/UX applications (Photoshop, Illustrator, Inkscape, Figma, etc.).</p>
+      <p>Current dev setup: Linux and VS Code (plus Windows and Mac machines if required).</p>
+    </div>
+    <div class="about-section" id="about-python-drupal">
+      <h2>Python and Django</h2>
+      <p>I have a comprehensive knowledge of Python and Django—a leading, open-source Python-based web framework.</p>
+      <p>On the backend, my day-to-day work includes Python programming, (Linux) server and database administration, and Django project building (coding models, views, etc.).
+      Meanwhile, on the frontend, my day-to-day work predominantly comprises Django website/app building and theming, using technologies including the Django Template Language (DTL), JavaScript/TypeScript, and CSS.</p>
+      <h3>Services</h3>
+      <p>I provide development services for clients across the world, most often working remotely from London, UK. Previous clients have been located in the UK, Australia, Belgium, and the US.</p>
+      <p>For all work enquiries, quote requests, etc. please <a href="{% url 'contact' %}">contact me</a> (preferably via email) and provide as much information as possible.</p>
+      <h2>Drupal</h2>
+      <p>I worked with Drupal from version 4.6 (you can find me on drupal.org as <a href="http://drupal.org/user/96416" target="_blank">laurencemercer</a>) and built and themed many Drupal-based sites, including michaeljackson.com and jimihendrix.com.</p>
+      <h2>CV</h2>
+      <p>A copy of my CV is available upon request.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

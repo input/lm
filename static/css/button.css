@@ -1,0 +1,31 @@
+.button,
+input.form-submit {
+  align-items: center;
+  background: var(--color-button);
+  border: 0;
+  border-radius: 2rem;
+  box-shadow: none;
+  color: var(--color-button-text);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-family-medium);
+  gap: .5rem;
+  padding: .5rem 1.25rem;
+  position: relative;
+  text-decoration: none;
+  transition: background 0.2s;
+  width: fit-content;
+  z-index: 5;
+}
+
+.button:hover,
+input.form-submit:hover {
+  background: var(--color-button-hover);
+  color: var(--color-white);
+}
+
+.button:active,
+input.form-submit:active {
+  position: relative;
+  top: 2px;
+}

@@ -1,0 +1,77 @@
+.blog article {
+  border-bottom: var(--border);
+  padding: 2rem 0 .5rem;
+}
+
+.blog .dateline {
+  margin-bottom: .5rem;
+}
+
+.subscribe {
+  border-bottom: var(--border);
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.subscribe p {
+  margin-bottom: 0;
+}
+
+.subscribe a {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+}
+
+.subscribe svg {
+  border-radius: .25rem;
+}
+
+.subscribe .atom svg {
+  background-color: #f1a61b;
+}
+
+.subscribe .email svg {
+  background-color: #1b98f1;
+}
+
+.blog-wrap {
+  margin: 0 auto;
+  max-width: 850px;
+}
+
+.tags {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+}
+
+.tags:has(a) {
+  margin-bottom: 0;
+  padding: 0 0 1.5rem !important;
+}
+
+.tags li {
+  list-style: none;
+}
+
+.tag {
+  border: var(--border);
+  border-radius: .25rem;
+  display: block;
+  padding: .1rem .75rem;
+}
+
+.blog article:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.blog-archive .entries,
+.blog-tag .entries {
+  margin: 1.5rem 0;
+}
+
+.entry-title {
+  font-weight: bold;
+}

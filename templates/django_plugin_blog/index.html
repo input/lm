@@ -1,0 +1,31 @@
+{% extends base_template %}
+
+{% block title %}Blog{% endblock %}
+{% block extra_head %}
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{{ atom_url }}">
+{% endblock %}
+{% block body_class %}{{ block.super }} blog{% endblock %}
+{% block content %}
+<div class="blog-wrap">
+  <h1 class="page-title">Blog</h1>
+  <div class="subscribe">
+    <p><strong>Subscribe via</strong></p>
+    <a href="{{ atom_url }}" title="Blog feed" class="atom">
+      <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#FFFFFF"><path d="M200-120q-33 0-56.5-23.5T120-200q0-33 23.5-56.5T200-280q33 0 56.5 23.5T280-200q0 33-23.5 56.5T200-120Zm480 0q0-117-44-218.5T516-516q-76-76-177.5-120T120-680v-120q142 0 265 53t216 146q93 93 146 216t53 265H680Zm-240 0q0-67-25-124.5T346-346q-44-44-101.5-69T120-440v-120q92 0 171.5 34.5T431-431q60 60 94.5 139.5T560-120H440Z"/></svg>
+      Atom
+    </a>
+  </div>
+  {% for entry in entries %}
+  <article>
+    <h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
+    <p class="dateline">{{ entry.created|date:"d F Y" }}</p>
+    <ul class="tags">
+      {% for tag in entry.tags.all %}<li><a href="/blog/tag/{{ tag.slug }}" class="tag" title="All posts tagged {{ tag.name }}">{{ tag.name }}</a></li>{% endfor %}
+    </ul>
+    {{ entry.summary_rendered }}
+  </article>
+  {% endfor %}
+
+  {% if has_more %}<p><a href="/blog/archive/">&larr; Older entries</a></p>{% endif %}
+</div>
+{% endblock %}
