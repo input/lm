@@ -28,7 +28,7 @@
   {% else %}
   <article>
     <h1>{{ entry.title }}{% if entry.is_draft %} (draft){% endif %}</h1>
-    <p class="dateline">{{ entry.created|date:"d F Y" }}</p>
+    <p class="dateline">{{ entry.created|date:"j F Y" }}</p>
     <ul class="tags">
       {% for tag in entry.tags.all %}<li><a href="/blog/tag/{{ tag.slug }}" class="tag" title="All posts tagged {{ tag.name }}">{{ tag.name }}</a></li>{% endfor %}
     </ul>

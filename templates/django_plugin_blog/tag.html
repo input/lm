@@ -12,7 +12,7 @@
   <h2>{{ year }}</h2>
   <div class="entries">
     {% for entry in entries %}
-    <p><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.title }}</a> - {{ entry.created|date:"d F Y" }}</p>
+    <p><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.title }}</a> - {{ entry.created|date:"j F Y" }}</p>
     {% endfor %}
   </div>
   {% endfor %}

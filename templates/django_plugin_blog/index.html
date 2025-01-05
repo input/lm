@@ -18,7 +18,7 @@
   {% for entry in entries %}
   <article>
     <h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
-    <p class="dateline">{{ entry.created|date:"d F Y" }}</p>
+    <p class="dateline">{{ entry.created|date:"j F Y" }}</p>
     <ul class="tags">
       {% for tag in entry.tags.all %}<li><a href="/blog/tag/{{ tag.slug }}" class="tag" title="All posts tagged {{ tag.name }}">{{ tag.name }}</a></li>{% endfor %}
     </ul>
