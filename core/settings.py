@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'examples',
     'compressor',
     'blog',
+    'pages',
 ]
 
 MIDDLEWARE = [
