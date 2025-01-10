@@ -2,6 +2,16 @@ from django.conf import settings
 from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
 from django_plugin_blog.models import Tag
+from django_plugin_blog.views import BlogFeed
+
+
+class BlogFeedCustom(BlogFeed):
+    """Override the default Atom feed created by django-plugin-blog."""
+    def item_description(self, item):
+        return item.summary_text
+
+    def item_updateddate(self, item):
+        return item.created
 
 
 class BlogTagFeed(Feed):
@@ -25,7 +35,7 @@ class BlogTagFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.summary_rendered
+        return item.summary_text
 
     def item_link(self, item):
         return f"/blog/{item.created.year}/{item.slug}/"
@@ -34,6 +44,9 @@ class BlogTagFeed(Feed):
         return (
             ", ".join([a.get_full_name() or str(a) for a in item.authors.all()]) or None
         )
+
+    def item_updateddate(self, item):
+        return item.created
 
     def get_feed(self, obj, request):
         feedgen = super().get_feed(obj, request)
