@@ -1,6 +1,8 @@
 # Hello 👋
 
-This is the codebase for [laurencemercer.com](https://laurencemercer.com), my personal portfolio website and blog.
+This is the old, Django-based codebase for [laurencemercer.com](https://laurencemercer.com), my personal portfolio website and blog.
+
+Please see [lm-wagtail](https://github.com/input/lm-wagtail) for the new, Wagtail-based codebase.
 
 ## Stack
 
